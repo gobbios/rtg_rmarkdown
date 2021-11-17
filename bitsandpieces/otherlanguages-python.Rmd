@@ -1,0 +1,26 @@
+
+## Python
+
+- requires `reticulate` package (and Python)
+
+.XC[
+````
+```{python, echo = TRUE}`r ''`
+hello = "hello"
+world = "world"
+helloworld = hello + " " + world
+print(helloworld)
+```
+````
+]
+
+
+```{python, echo = TRUE, eval = TRUE}
+hello = "hello"
+world = "world"
+helloworld = hello + " " + world
+print(helloworld)
+```
+
+.footnote[<font size="-1"> https://rstudio.github.io/reticulate/ </font>]
+

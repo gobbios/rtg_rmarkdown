@@ -1,0 +1,55 @@
+## wrapping up
+
+- establish good practice
+
+--
+
+- you can’t reproduce what doesn’t exist
+
+--
+
+- your single most important collaborator is your future self
+
+--
+
+- think about your workflow
+
+
+```{r, eval=FALSE, echo=FALSE}
+file.exists("../decoration_files/vince.gif")
+file.exists("decoration_files/vince.gif")
+getwd()
+```
+
+
+```{r, eval = TRUE, echo=FALSE, results='hide'}
+suppressPackageStartupMessages(library(magick))
+fig <- image_graph(res = 96)
+set.seed(123)
+# x <- runif(100)
+# y <- rgamma(100, x, 1)
+par(family = "serif", mar = c(4, 5, 0.1, 0.1))
+# plot(fitted(lm(y ~ x)), resid(lm(y ~ x)), ylab = "residuals", xlab = "fitted values", las = 1, ylim = c(-2, 2), cex = 2, cex.axis = 1.5, cex.lab = 2.5, xlim = c(0, 1))
+plot(0, 0, "n", ann = FALSE, axes = FALSE, ylim = c(-2, 2), cex = 2, cex.axis = 1.5, cex.lab = 2.5, xlim = c(0, 1))
+# dev.off()
+
+vince <- image_read("../decoration_files/vince.gif") # coalesce = TRUE
+
+frames <- sapply(vince, function(frame) {
+  image_composite(fig, image_scale(frame, geometry = "220x"), offset = "+95+308")
+})
+
+animation <- image_animate(image_join(frames))
+# animation
+# image_write(animation, "decoration_files/heteroscedasticity.gif")
+```
+
+
+```{r vince, eval = TRUE, echo=FALSE, out.width="80%", fig.align='center'}
+animation
+# (https://i.imgur.com/e1IneGq.jpg)
+
+# suppressPackageStartupMessages(library(magick))
+# vince <- image_read("../decoration_files/vince.gif") # coalesce = TRUE
+# vince
+```

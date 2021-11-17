@@ -1,0 +1,9 @@
+## important shortcuts
+
+cmd + shift + 0 : restart R
+
+cmd + shift + enter: run current chunk
+
+cmd + shift + k: build document
+
+cmd + option/alt + i: new R chunk

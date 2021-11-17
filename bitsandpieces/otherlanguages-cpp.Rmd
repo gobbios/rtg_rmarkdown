@@ -1,0 +1,38 @@
+## `C++` and `Rcpp`
+
+- requires a working C++ toolchain
+
+.footnote[<font size="-1"> https://doi.org/10.18637/jss.v040.i08 </font>]
+
+.XC[
+````
+```{Rcpp}`r ''`
+#include <Rcpp.h>
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+NumericVector timesTwo(NumericVector x) {
+  return x * 2;
+}
+```
+````
+]
+
+---
+
+## `C++` and `Rcpp`
+
+```{Rcpp, echo = TRUE, eval = TRUE}
+#include <Rcpp.h>
+using namespace Rcpp;
+// [[Rcpp::export]]
+NumericVector timesTwo(NumericVector x) {
+  return x * 2;
+}
+```
+
+
+```{r}
+timesTwo(3.5)
+```
+

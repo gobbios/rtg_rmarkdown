@@ -1,0 +1,57 @@
+
+## `stan`
+
+- requires a working C++ toolchain
+
+.footnote[<font size="-1"> https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started </font>]
+
+
+.XC[
+````
+```{stan, output.var = "stan_example"}`r ''`
+parameters {
+  real y[2];
+}
+model {
+  y[1] ~ normal(0, 1);
+  y[2] ~ double_exponential(0, 2);
+}
+```
+````
+]
+
+---
+
+## `stan`
+
+
+```{stan, output.var = "stan_example", echo = TRUE, eval = TRUE, cache = TRUE}
+parameters {
+  real y[2];
+}
+model {
+  y[1] ~ normal(0, 1);
+  y[2] ~ double_exponential(0, 2);
+}
+```
+
+```{r, echo=FALSE}
+suppressPackageStartupMessages(library(rstan))
+```
+
+---
+
+## `stan`
+
+```{r, cache = TRUE, eval = TRUE}
+library(rstan)
+fit <- sampling(stan_example, refresh = 0)
+```
+
+
+```{r, eval = TRUE}
+knitr::kable(summary(fit)$summary, digits = 2, format = 'html', 
+             caption = "This are the results from sampling the above model.")
+```
+
+

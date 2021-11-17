@@ -1,0 +1,12 @@
+
+## why I don't like notebooks
+
+  - when I write code, I want to see code
+  
+  - when I write narrative, I want to see the narrative
+  
+  - my focus is usually on one, not both simultaneously
+
+  - imho, notebooks mix the two in a confusing fashion
+  
+  

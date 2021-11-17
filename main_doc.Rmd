@@ -78,7 +78,7 @@ class: inverse, center, middle
 ---
 
 
-```{r, eval = FALSE, child="bitsandpieces/survey_results.Rmd"}
+```{r, eval = TRUE, child="bitsandpieces/survey_results.Rmd"}
 
 ```
 
