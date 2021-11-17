@@ -30,7 +30,8 @@
 .XC[
 ````
 @article{forstmeier2011,
-  title = {Cryptic Multiple Hypotheses Testing in Linear Models: Overestimated Effect Sizes and the Winner's Curse},     
+  title = {Cryptic Multiple Hypotheses Testing in Linear Models: 
+    Overestimated Effect Sizes and the Winner's Curse},     
   volume = {65},
   doi = {10.1007/s00265-010-1038-5},
   journaltitle = {Behavioral Ecology and Sociobiology},
@@ -52,7 +53,8 @@
 @incollection{garamszegi2014,
   location = {Berlin},
   title = {Multimodel-Inference in Comparative Analyses},
-  booktitle = {Modern Phylogenetic Comparative Methods and Their Application in Evolutionary Biology}, 
+  booktitle = {Modern Phylogenetic Comparative Methods and 
+    Their Application in Evolutionary Biology}, 
   publisher = {Springer},
   date = {2014},
   pages = {305--331},
@@ -97,3 +99,8 @@ Blah blah [see @forstmeier2011, p. 365; but see @garamszegi2014].
 
 ````
 ]
+
+--
+
+- bibliography is inserted after the header `# references`
+

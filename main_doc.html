@@ -71,7 +71,7 @@ class: center, middle, inverse, title-slide
 
 - my assumptions:
   
-  - you have used R before and use RStudio 
+  - you have used `R` before and use RStudio 
   
   - you want to produce pdfs (article, thesis, presentation) or html (presentation, websites, `shiny`)
   
@@ -83,6 +83,845 @@ class: center, middle, inverse, title-slide
   
   - always keep in mind what you **need** (and not what you **can do**)
 
+  - fine line between what I would consider a 'good' presentation and showcasing the capabilities of `R` markdown
+
+---
+class: inverse, center, middle
+
+# dynamic documents
+
+---
+
+
+## dynamic (or living) documents
+
+- continuous updates, revisions and edits (think Wikipedia)
+
+--
+
+- as opposed to static (dead) document (think printed lexicon)
+
+--
+
+- in scientific context:
+
+  - preprints
+  
+  - during write-up
+
+--
+
+- can you do good and transparent science without it? YES.
+
+???
+framework for updates and changes may be implemented or not
+
+revision and updates
+
+
+
+
+---
+
+
+
+## a truly dynamic document
+
+- this example grabs the data directly from the survey website
+
+
+
+
+
+
+
+
+
+
+&lt;img src="main_doc_files/figure-html/unnamed-chunk-22-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+
+
+
+## background
+
+- to replicate
+
+.content-box-yellow[
+obtaining consistent results across studies aimed at answering the same scientific question, each of which has obtained its own data.]
+
+--
+
+- to reproduce 
+
+.content-box-yellow[
+obtaining consistent results using the same input data, computational steps, methods, and conditions of analysis]
+
+
+.footnote[&lt;font size="-1"&gt;https://doi.org/10.17226/25303&lt;/font&gt;]
+
+---
+
+## reproducibility
+
+.content-box-yellow[
+If someone applies the same analysis to the same data, then the same result should recur.]
+
+.footnote[&lt;font size="-1"&gt;https://doi.org/10.1146/annurev-psych-020821-114157&lt;/font&gt;]
+
+
+- process failure:
+
+  - no results obtainable
+  
+  - unavailability of data and code
+  
+  - incomplete information about the analysis, software or tools
+  
+- outcome failure:
+
+  - different results
+  
+  - error in original study or in reproduction attempt
+
+???
+In principle, all reported evidence should be reproducible. If someone applies the same analysis to the same data, then the same result should recur. Reproducibility tests can fail for two reasons. A process reproducibility failure occurs when the original analysis cannot be repeated because of unavailability of the data, code, information about the analysis to recreate the code, or necessary software or tools. An outcome reproducibility failure occurs when the reanalysis obtains a different result than reported originally. This can occur because of an error in either the original or reproduction study.
+
+
+---
+class: inverse, center, middle
+# what is R markdown and why should we care?
+
+---
+
+
+
+background-image: url(decoration_files/ecosystem.png)
+background-position: center
+background-size: contain
+background-position: 100% 100%
+background-size: 400px
+
+## `R` markdown?
+
+&lt;style type="text/css"&gt;
+.pull-left65 {
+  float: left;
+  width: 70%;
+}
+.pull-right35 {
+  float: right;
+  width: 35%;
+}
+.pull-right ~ p {
+  clear: both;
+}
+&lt;/style&gt;
+
+- **markdown** is a programming language for converting plain text into formatted text
+
+--
+
+- **R markdown** builds on this and allows producing formatted output that builds on R code 
+
+--
+
+.pull-left65[
+- by now, the `rmarkdown` universe allows production of
+
+  - text documents (journal articles, theses, books) 
+
+  - presentations
+
+  - websites (via blogdown)
+
+  - interactive applications/dashboards (via shiny) 
+
+  - exotic things (epub, docx, pptx, package documentation)
+]
+
+---
+
+## `R` markdown?
+
+- all these have in common:
+
+  - a shared logic and style for mixing written text and results from analyses 
+  
+  - full reproducibility (at least in theory)
+
+  - being open source and having an active community
+
+  - still a high degree of flexibility
+  
+  - a certain aesthetic (it just looks good, no?)
+
+
+---
+
+## `R` markdown!
+
+- self-contained
+
+- reproducible
+
+- robust
+
+- it's what the cool kids do these days (thanks, Roger)
+
+- but there are downsides, too (we'll get to that)
+
+---
+
+## why again?
+
+&lt;img src="decoration_files/reproducibility-cartoon.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+.footnote[&lt;font size="-1"&gt;I can't find the origin of this cartoon. If you know, please let me know.&lt;/font&gt;]
+
+
+
+
+
+---
+class: center, middle
+# your most important collaborator is your future self!!! 
+
+---
+
+
+
+## when does it get complicated?
+
+- it might very well...
+
+--
+
+- actually, it's likely to happen sooner rather than later
+
+--
+
+- long execution time (think bootstraps, models in `stan`)
+
+  - sending workspaces to Roger
+  
+  - save workspace or not? it depends
+
+--
+
+- collaborators/supervisors/students won't/can't be bothered
+
+--
+
+- (in)dependence of RStudio
+
+--
+
+- environment [R version, package versions] at time of writing (when it works) versus time of production [which is the same as writing but also may be months or years later (reproducibility)]
+
+--
+
+- subtle differences (e.g. this presentation format doesn't support references and only very simple tables)
+
+
+
+
+---
+class: inverse, center, middle
+# the nitty and the gritty
+
+
+---
+
+
+## markdown (markup language)
+
+- allows **plain text** with **simple formatting** to be translated into other formats
+
+- independent of `R`, RStudio and `\(\LaTeX\)`
+
+- .md
+
+--
+
+````md
+Heading
+=======
+
+Sub-heading
+-----------
+
+Paragraphs **are** separated 
+by a blank line.
+````
+
+.footnote[&lt;font size="-1"&gt;https://www.markdownguide.org/&lt;/font&gt;]
+
+
+---
+
+## R markdown
+
+- extension of markdown
+
+- allows combining markdown ('text', 'narrative') and `R` ('code')
+
+- still plain text
+
+- independent of `\(\LaTeX~\)` and RStudio (although the latter provides lots of convenience)
+
+- .Rmd
+
+--
+
+.XC[
+````
+We can combine markdown and `R` code.
+Backticks are really important here.
+
+```{r, fig.cap = "My results."}
+plot(1:10)
+```
+````
+]
+
+.footnote[&lt;font size="-1"&gt;https://rmarkdown.rstudio.com/&lt;/font&gt;]
+
+
+---
+
+## `knitr` (and `rmarkdown`)
+
+- are R packages
+
+- `knitr` takes the code chunks, runs them and 'knits' them back into markdown
+
+- requires R, but its results are independent of R (because they are markdown)
+
+- `rmarkdown` and `knitr` also provide several convenience functions
+
+.footnote[&lt;font size="-1"&gt;https://yihui.org/knitr/&lt;/font&gt;]
+
+---
+
+## Pandoc
+
+- document converter
+
+- transforms .md into .html/.tex
+
+- can also do tons of other conversions (-&gt; MS Office, LibreOffice, ...)
+
+- independent of `R` and RStudio
+
+
+.footnote[&lt;font size="-1"&gt;https://pandoc.org/&lt;/font&gt;]
+
+---
+
+## `\(\LaTeX\)`
+
+- builds .pdf files (article, thesis, presentation) from .tex files
+
+- "a software system for document preparation"
+
+- "separating presentation from content"
+
+- independent of `R` and RStudio
+
+.footnote[&lt;font size="-1"&gt;https://www.latex-project.org/&lt;/font&gt;]
+
+---
+
+## in a nutshell
+
+&lt;img src="decoration_files/rmd_workflow.png" width="2072" /&gt;
+
+
+.footnote[&lt;font size="-1"&gt;https://bookdown.org/yihui/rmarkdown-cookbook/&lt;/font&gt;]
+
+
+
+
+
+---
+class: inverse, center, middle
+# getting to it
+
+
+---
+
+
+
+## prep
+
+- create a new RStudio project
+
+- create a new `R` markdown file
+
+- memorize some keyboard shortcuts
+
+  - cmd/ctrl + shift + k: build document
+  
+  - cmd/ctrl + option/alt + i: new R chunk
+
+  - cmd/ctrl + shift + enter: run current chunk
+  
+  - cmd/ctrl + shift + 0: restart `R`
+
+---
+
+
+## `yaml` header
+
+- contains meta data for the final document (author, title, date)
+
+- determines output format (here: `html_document`)
+
+  - possibly with options (table of contents, highlighting options)
+  
+  - if we get to it, we might also try `pdf_document`
+  
+- other options:
+  
+  - control RStudio's behavior
+  
+  - bibliography data, reference style
+  
+  - line numbering and line spacing
+
+- we won't look into this much, and mostly rely on the default options RStudio provides
+
+
+---
+
+## `yaml` header
+
+````md
+---
+title: "Untitled"
+author: "Christof Neumann"
+date: "9/29/2021"
+output: 
+  html_document:
+    highlight: tango
+editor_options: 
+  chunk_output_type: console
+---
+````
+
+
+
+---
+
+
+## a simple paragraph
+
+.XC[
+````
+# Introduction
+
+A short paragraph that contains a summary of the article, for
+example the background and some major results. And note that 
+the header 'Introduction' was formatted as a header because 
+we put a \# in front of it (which is visible only in the source 
+code of the document).
+````
+]
+
+# Introduction
+
+A short paragraph that contains a summary of the article, for example
+the background and some major results. And note that the header
+'Introduction' was formatted as a header because we put a \# in front of
+it (which is visible only in the source code of the document).
+
+---
+
+## simple formatting
+
+.XC[
+````
+Text can be **bold** or in *italics*. 
+But we can also use ~~strike through~~.
+Underlining is trickier and requires html code.
+````
+]
+
+Text can be **bold** or in *italics*. 
+But we can also use ~~strike through~~.
+Underlining is trickier and requires html code.
+
+---
+
+
+## a first code chunk
+
+.XC[
+````
+This is just some text about how to generate random numbers in R:
+
+```{r}
+rnorm(3)
+```
+Easy, no?
+````
+]
+
+
+This is just some text about how to generate random numbers in R:
+
+
+```r
+rnorm(3)
+```
+
+```
+## [1]  2.1312383  0.3279375 -1.6218263
+```
+
+Easy, no?
+
+
+---
+
+
+## more on code chunks
+
+.XC[
+````
+```{r}
+x &lt;- rnorm(1000)
+hist(x)
+```
+````
+]
+
+
+
+```r
+x &lt;- rnorm(1000)
+hist(x)
+```
+
+![](main_doc_files/figure-html/unnamed-chunk-27-1.png)&lt;!-- --&gt;
+
+
+---
+
+## more on code chunks
+
+- use chunk options
+
+.XC[
+````
+```{r, out.width = "40%", fig.align = 'center'}
+x &lt;- rnorm(1000)
+hist(x)
+```
+````
+]
+
+
+
+```r
+x &lt;- rnorm(1000)
+hist(x)
+```
+
+&lt;img src="main_doc_files/figure-html/unnamed-chunk-28-1.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+## more on code chunks
+
+- hide the actual code, and add a caption (which is desired in many situations)
+.XC[
+````
+```{r, out.width = "35%", fig.align = 'center', echo = FALSE, 
+fig.cap = "This is the figure caption."}
+x &lt;- rnorm(1000)
+hist(x)
+```
+````
+]
+
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="main_doc_files/figure-html/unnamed-chunk-29-1.png" alt="This is the figure caption." width="35%" /&gt;
+&lt;p class="caption"&gt;This is the figure caption.&lt;/p&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+
+---
+
+
+## using `R` objects in the actual text part
+
+.XC[
+````
+```{r, echo = FALSE}
+data("cars")
+ncars &lt;- nrow(cars)
+mycor &lt;- cor(cars$speed, cars$dist)
+```
+
+The cars data set has `r ncars` observations.
+And the correlation between speed and distance is `r round(mycor, 2)`.
+
+````
+]
+
+
+
+
+
+The cars data set has 50 observations. 
+And the correlation between speed and distance is 0.81.
+
+
+---
+
+
+
+
+## equations
+
+.XC[
+````
+We can also write fancy equations like $x = \sqrt{y} + c^2$, if they 
+are wrapped in dollar signs ($). But equations can also span 
+multiple lines, with a 'proper' math environment:
+$$
+x = \sum{\frac{42 + y}{log(z)}}
+$$
+
+````
+]
+
+We can also write fancy equations like `\(x = \sqrt{y} + c^2\)`, if they are wrapped in dollar signs ($). But equations can also span multiple lines, with a 'proper' math environment:
+$$
+x = \sum{\frac{42 + y}{log(z)}}
+$$
+
+---
+
+
+## tables
+
+- are a bit trickier
+
+- simple tables are possible with `knitr::kable()`
+
+- more complex tables require the package `xtable`
+
+.XC[
+````
+```{r, echo = FALSE}
+data("airquality")
+knitr::kable(head(airquality))
+```
+
+````
+]
+
+
+| Ozone| Solar.R| Wind| Temp| Month| Day|
+|-----:|-------:|----:|----:|-----:|---:|
+|    41|     190|  7.4|   67|     5|   1|
+|    36|     118|  8.0|   72|     5|   2|
+|    12|     149| 12.6|   74|     5|   3|
+|    18|     313| 11.5|   62|     5|   4|
+|    NA|      NA| 14.3|   56|     5|   5|
+|    28|      NA| 14.9|   66|     5|   6|
+
+---
+
+
+## references and bibliography
+
+- (can't be demonstrated in this particular presentation format, bummer)
+
+- requires `bibtex` references
+
+- bibtex files are plain text files
+
+- probably any reference manager can import/export references in bib(la)tex style (Zotero, Mendeley, Endnote)
+
+- in my workflow, I manage my references with Zotero, and export regularly a .bib file with all the references I ever cited at some point, which I then use for citations in R markdown documents
+
+- check out the "Better Bib(La)TeX" plugin for Zotero (https://github.com/retorquere/zotero-better-bibtex)
+
+- a multi-platform graphic reference manager for bib(la)tex files is JabRef (http://www.jabref.org/)
+
+- style sheets for different journals (.csl files) can be found here: https://www.zotero.org/styles (or here: https://github.com/citation-style-language/styles)
+
+
+---
+
+## references and bibliography
+
+- a typical bibtex entry for a journal article and book chapter (on the next slide) looks like this
+
+- the crucial thing here is the citation key, i.e. the identifier (`forstmeier2011` in the first example)
+
+- you need the citation key to cross-reference
+
+.XC[
+````
+@article{forstmeier2011,
+  title = {Cryptic Multiple Hypotheses Testing in Linear Models: 
+    Overestimated Effect Sizes and the Winner's Curse},     
+  volume = {65},
+  doi = {10.1007/s00265-010-1038-5},
+  journaltitle = {Behavioral Ecology and Sociobiology},
+  date = {2011},
+  pages = {47--55},
+  author = {Forstmeier, Wolfgang and Schielzeth, Holger}
+}
+````
+]
+
+---
+
+## references and bibliography
+
+- here is an entry for a book chapter
+
+.XC[
+````
+@incollection{garamszegi2014,
+  location = {Berlin},
+  title = {Multimodel-Inference in Comparative Analyses},
+  booktitle = {Modern Phylogenetic Comparative Methods and 
+    Their Application in Evolutionary Biology}, 
+  publisher = {Springer},
+  date = {2014},
+  pages = {305--331},
+  author = {Garamszegi, László Zsolt and Mundry, Roger},
+  editor = {Garamszegi, László Zsolt}
+}
+````
+]
+
+---
+
+## references and bibliography
+
+- update the `yaml` header to point to .bib file (biblographic entries) and .csl file (formatting style)
+
+````md
+---
+title: "Untitled"
+author: "Christof Neumann"
+date: "9/29/2021"
+output: 
+  html_document:
+    highlight: tango
+editor_options: 
+  chunk_output_type: console
+bibliography: data_files/refs.bib
+csl: data_files/animal-behaviour.csl
+---
+````
+
+---
+
+## references and bibliography
+
+.XC[
+````
+Blah blah [@forstmeier2011; @garamszegi2014].
+
+Blah blah [see @forstmeier2011, p. 365; but see @garamszegi2014].
+
+@forstmeier2011 say something.
+
+````
+]
+
+--
+
+- bibliography is inserted after the header `# references`
+
+
+
+
+
+---
+
+## going further
+
+- cross-references (to figures and tables)
+
+- table and plotting options
+
+- conditional inclusion of chunks
+
+- actually using `\(\LaTeX\)`
+
+- formatting (chapters)
+
+- extended referencing (bibliographic)
+
+- integrating other coding languages (Python, `stan`, `C++`, ...)
+
+- put it all under version control
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: inverse, center, middle
+
+# wrapping up
+
+
+---
+
+## wrapping up
+
+- establish good practice
+
+--
+
+- you can't reproduce what doesn't exist
+
+--
+
+- your single most important collaborator is your future self
+
+--
+
+- think about your workflow
+
+&lt;img src="main_doc_files/figure-html/vince-1.gif" width="60%" style="display: block; margin: auto 0 auto auto;" /&gt;
 
 
     </textarea>

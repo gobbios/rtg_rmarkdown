@@ -7,16 +7,17 @@
 # check whether we have to work locally (if not on my computer) 
 # (need credentials to access survey data)
 # if local: from work from local csv file (which is also in the repository)
-local <- Sys.getenv("USER") != "christofneumann"
+# if both conditions are TRUE: run it from remote server
+xremote <- Sys.getenv("USER") == "christofneumann" & !is.null(getOption("sm_oauth_token"))
+
 ```
 
-```{r, echo=FALSE, eval = local}
-xdata <- read.csv("data_files/survey_results.csv")
-xdata
+```{r, echo=FALSE, eval = !xremote}
+xdata <- read.csv("../data_files/survey_results.csv")
 ```
 
 
-```{r, echo=FALSE, eval = !local}
+```{r, echo=FALSE, eval = xremote}
 library(surveymonkey)
 
 a_survey_obj <- suppressMessages(fetch_survey_obj(314538207)) # survey's ID goes here
