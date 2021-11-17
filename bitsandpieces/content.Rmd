@@ -1,0 +1,32 @@
+## content
+
+- dynamic documents, huh?
+
+--
+
+- what is R markdown and why should we care?
+
+--
+
+- the dark side of a dynamic workflow
+
+--
+
+- let's get our hands dirty
+
+--
+
+- my assumptions:
+  
+  - you have used R before and use RStudio 
+  
+  - you want to produce pdfs (article, thesis, presentation) or html (presentation, websites, `shiny`)
+  
+--
+
+- adjust your expectations:
+  
+  - we scratch on the surface
+  
+  - always keep in mind what you **need** (and not what you **can do**)
+
