@@ -1,0 +1,36 @@
+## a simple paragraph
+
+.XC[
+````
+# Introduction
+
+A short paragraph that contains a summary of the article, for
+example the background and some major results. And note that 
+the header 'Introduction' was formatted as a header because 
+we put a \# in front of it (which is visible only in the source 
+code of the document).
+````
+]
+
+# Introduction
+
+A short paragraph that contains a summary of the article, for example
+the background and some major results. And note that the header
+'Introduction' was formatted as a header because we put a \# in front of
+it (which is visible only in the source code of the document).
+
+---
+
+## simple formatting
+
+.XC[
+````
+Text can be **bold** or in *italics*. 
+But we can also use ~~strike through~~.
+Underlining is trickier and requires html code.
+````
+]
+
+Text can be **bold** or in *italics*. 
+But we can also use ~~strike through~~.
+Underlining is trickier and requires html code.

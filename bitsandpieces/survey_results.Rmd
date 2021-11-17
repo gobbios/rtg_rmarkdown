@@ -1,0 +1,51 @@
+## a truly dynamic document
+
+- this example grabs the data directly from the survey website
+
+
+```{r, echo=FALSE}
+# check whether we have to work locally (if not on my computer) 
+# (need credentials to access survey data)
+# if local: from work from local csv file (which is also in the repository)
+local <- Sys.getenv("USER") != "christofneumann"
+```
+
+```{r, echo=FALSE, eval = local}
+xdata <- read.csv("data_files/survey_results.csv")
+xdata
+```
+
+
+```{r, echo=FALSE, eval = !local}
+library(surveymonkey)
+
+a_survey_obj <- suppressMessages(fetch_survey_obj(314538207)) # survey's ID goes here
+survey_df <- suppressMessages(parse_survey(a_survey_obj))
+
+
+xdata <- data.frame(survey_df)
+
+
+xd <- data.frame(think = xdata$How.often.do.you.think.about.reproducibility.,
+                 talk = xdata$How.often.do.you.talk.to.colleagues.students.supervisors.about.reproducibility.,
+                 wonder = xdata$How.often.do.you.wonder.about.the.reproducibility.of.published.work.,
+                 tried = xdata$Have.you.ever.tried.to.replicate.the.data.processing.and.or.statistical.analyses.from.a.published.study.,
+                 success = xdata$If.yes..think.about.the.last.time.you.tried..Were.you.successful.,
+                 formal_training = xdata$Did.you.receive.any.formal.training.about.producing.reproducible.research.,
+                 crisis = xdata$Do.you.think.there.is.a.reproducibility.crisis.in.your.field.of.research.,
+                 reproducible = xdata$In.your.opinion..what.percentage.of.published.results.in.your.research.field.are.reproducible.)
+
+xd$reproducible[xd$reproducible == "depends on the specifics.. maybe 50-60? "] <- 55
+xd$reproducible[xd$reproducible == "?"] <- NA
+
+xd$reproducible <- suppressWarnings(as.numeric(as.character(xd$reproducible)))
+xdata <- xd
+```
+
+
+```{r, echo=FALSE, fig.width=8, fig.height=5, out.width="80%", fig.retina=2, fig.align='center'}
+par(mfrow = c(1, 2), las = 1, family = "serif")
+barplot(table(xdata$formal_training), main = "did you receive formal training?", ylim = c(0, 20), xpd = TRUE)
+barplot(table(xdata$crisis), main = "is there a crisis?", ylim = c(0, 20), xpd = TRUE)
+```
+

@@ -1,0 +1,108 @@
+## markdown (markup language)
+
+- allows **plain text** with **simple formatting** to be translated into other formats
+
+- independent of `R`, RStudio and $\LaTeX$
+
+- .md
+
+--
+
+````md
+Heading
+=======
+
+Sub-heading
+-----------
+
+Paragraphs **are** separated 
+by a blank line.
+````
+
+.footnote[<font size="-1">https://www.markdownguide.org/</font>]
+
+
+---
+
+## R markdown
+
+- extension of markdown
+
+- allows combining markdown ('text', 'narrative') and `R` ('code')
+
+- still plain text
+
+- independent of $\LaTeX~$ and RStudio (although the latter provides lots of convenience)
+
+- .Rmd
+
+--
+
+.XC[
+````
+We can combine markdown and `R` code.
+Backticks are really important here.
+
+```{r, fig.cap = "My results."}`r ''`
+plot(1:10)
+```
+````
+]
+
+.footnote[<font size="-1">https://rmarkdown.rstudio.com/</font>]
+
+
+---
+
+## `knitr` (and `rmarkdown`)
+
+- are R packages
+
+- `knitr` takes the code chunks, runs them and 'knits' them back into markdown
+
+- requires R, but its results are independent of R (because they are markdown)
+
+- `rmarkdown` and `knitr` also provide several convenience functions
+
+.footnote[<font size="-1">https://yihui.org/knitr/</font>]
+
+---
+
+## Pandoc
+
+- document converter
+
+- transforms .md into .html/.tex
+
+- can also do tons of other conversions (-> MS Office, LibreOffice, ...)
+
+- independent of `R` and RStudio
+
+
+.footnote[<font size="-1">https://pandoc.org/</font>]
+
+---
+
+## $\LaTeX$
+
+- builds .pdf files (article, thesis, presentation) from .tex files
+
+- "a software system for document preparation"
+
+- "separating presentation from content"
+
+- independent of `R` and RStudio
+
+.footnote[<font size="-1">https://www.latex-project.org/</font>]
+
+---
+
+## in a nutshell
+
+```{r, echo=FALSE}
+knitr::include_graphics("decoration_files/rmd_workflow.png")
+```
+
+
+.footnote[<font size="-1">https://bookdown.org/yihui/rmarkdown-cookbook/</font>]
+

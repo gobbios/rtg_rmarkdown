@@ -1,0 +1,32 @@
+
+## when does it get complicated?
+
+- it might very well...
+
+--
+
+- actually, it's likely to happen sooner rather than later
+
+--
+
+- long execution time (think bootstraps, models in `stan`)
+
+  - sending workspaces to Roger
+  
+  - save workspace or not? it depends
+
+--
+
+- collaborators/supervisors/students won't/can't be bothered
+
+--
+
+- (in)dependence of RStudio
+
+--
+
+- environment [R version, package versions] at time of writing (when it works) versus time of production [which is the same as writing but also may be months or years later (reproducibility)]
+
+--
+
+- subtle differences (e.g. this presentation format doesn't support references and only very simple tables)

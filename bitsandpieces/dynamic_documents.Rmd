@@ -1,0 +1,26 @@
+## dynamic (or living) documents
+
+- continuous updates, revisions and edits (think Wikipedia)
+
+--
+
+- as opposed to static (dead) document (think printed lexicon)
+
+--
+
+- in scientific context:
+
+  - preprints
+  
+  - during write-up
+
+--
+
+- can you do good and transparent science without it? YES.
+
+???
+framework for updates and changes may be implemented or not
+
+revision and updates
+
+

@@ -1,0 +1,45 @@
+
+## background
+
+- to replicate
+
+.content-box-yellow[
+obtaining consistent results across studies aimed at answering the same scientific question, each of which has obtained its own data.]
+
+--
+
+- to reproduce 
+
+.content-box-yellow[
+obtaining consistent results using the same input data, computational steps, methods, and conditions of analysis]
+
+
+.footnote[<font size="-1">https://doi.org/10.17226/25303</font>]
+
+---
+
+## reproducibility
+
+.content-box-yellow[
+If someone applies the same analysis to the same data, then the same result should recur.]
+
+.footnote[<font size="-1">https://doi.org/10.1146/annurev-psych-020821-114157</font>]
+
+
+- process failure:
+
+  - no results obtainable
+  
+  - unavailability of data and code
+  
+  - incomplete information about the analysis, software or tools
+  
+- outcome failure:
+
+  - different results
+  
+  - error in original study or in reproduction attempt
+
+???
+In principle, all reported evidence should be reproducible. If someone applies the same analysis to the same data, then the same result should recur. Reproducibility tests can fail for two reasons. A process reproducibility failure occurs when the original analysis cannot be repeated because of unavailability of the data, code, information about the analysis to recreate the code, or necessary software or tools. An outcome reproducibility failure occurs when the reanalysis obtains a different result than reported originally. This can occur because of an error in either the original or reproduction study.
+

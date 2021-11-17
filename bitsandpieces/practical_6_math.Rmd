@@ -1,0 +1,20 @@
+
+
+## equations
+
+.XC[
+````
+We can also write fancy equations like $x = \sqrt{y} + c^2$, if they 
+are wrapped in dollar signs ($). But equations can also span 
+multiple lines, with a 'proper' math environment:
+$$
+x = \sum{\frac{42 + y}{log(z)}}
+$$
+
+````
+]
+
+We can also write fancy equations like $x = \sqrt{y} + c^2$, if they are wrapped in dollar signs ($). But equations can also span multiple lines, with a 'proper' math environment:
+$$
+x = \sum{\frac{42 + y}{log(z)}}
+$$

@@ -1,0 +1,39 @@
+## `yaml` header
+
+- contains meta data for the final document (author, title, date)
+
+- determines output format (here: `html_document`)
+
+  - possibly with options (table of contents, highlighting options)
+  
+  - if we get to it, we might also try `pdf_document`
+  
+- other options:
+  
+  - control RStudio's behavior
+  
+  - bibliography data, reference style
+  
+  - line numbering and line spacing
+
+- we won't look into this much, and mostly rely on the default options RStudio provides
+
+
+---
+
+## `yaml` header
+
+````md
+---
+title: "Untitled"
+author: "Christof Neumann"
+date: "9/29/2021"
+output: 
+  html_document:
+    highlight: tango
+editor_options: 
+  chunk_output_type: console
+---
+````
+
+

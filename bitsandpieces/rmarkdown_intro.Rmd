@@ -1,0 +1,89 @@
+
+background-image: url(decoration_files/ecosystem.png)
+background-position: center
+background-size: contain
+background-position: 100% 100%
+background-size: 400px
+
+## `R` markdown?
+
+```{css echo=FALSE}
+.pull-left65 {
+  float: left;
+  width: 70%;
+}
+.pull-right35 {
+  float: right;
+  width: 35%;
+}
+.pull-right ~ p {
+  clear: both;
+}
+```
+
+- **markdown** is a programming language for converting plain text into formatted text
+
+--
+
+- **R markdown** builds on this and allows producing formatted output that builds on R code 
+
+--
+
+.pull-left65[
+- by now, the `rmarkdown` universe allows production of
+
+  - text documents (journal articles, theses, books) 
+
+  - presentations
+
+  - websites (via blogdown)
+
+  - interactive applications/dashboards (via shiny) 
+
+  - exotic things (epub, docx, pptx, package documentation)
+]
+
+---
+
+## `R` markdown?
+
+- all these have in common:
+
+  - a shared logic and style for mixing written text and results from analyses 
+  
+  - full reproducibility (at least in theory)
+
+  - being open source and having an active community
+
+  - still a high degree of flexibility
+  
+  - a certain aesthetic (it just looks good, no?)
+
+
+---
+
+## `R` markdown!
+
+- self-contained
+
+- reproducible
+
+- robust
+
+- it's what the cool kids do these days (thanks, Roger)
+
+- but there are downsides, too (we'll get to that)
+
+---
+
+## why again?
+
+```{r, echo=FALSE, fig.align='center', out.width="50%"}
+knitr::include_graphics("decoration_files/reproducibility-cartoon.png")
+```
+
+.footnote[<font size="-1">I can't find the origin of this cartoon. If you know, please let me know.</font>]
+
+
+
+

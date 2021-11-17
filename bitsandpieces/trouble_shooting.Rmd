@@ -1,0 +1,75 @@
+
+## trouble shooting
+
+- if you get into trouble with R not finding files, one strategy is to make rmarkdown print the current working directory, e.g. put this in your document (and set the chunk that causes the trouble to `eval = FALSE`):
+
+- this tells you where rmarkdown thinks the working directory is
+
+.XC[
+````
+```{r}`r ''`
+cat(getwd())
+```
+````
+]
+
+```{r, eval=TRUE}
+cat(getwd())
+```
+
+
+---
+
+## trouble shooting
+
+- now you can use relative navigation to find the correct file path
+
+- for example, "`../`" navigates one level up in the folder structure
+
+- this is not needed if you work with RStudio projects
+
+- being within an RStudio project, usually navigation is only into subfolders
+
+```{r, error = TRUE, eval = FALSE}
+xdata <- read.csv("data_files/individual_files/file1.csv")
+```
+
+- if you really need to go the other way, it could look like this
+
+```{r, error = TRUE, eval = FALSE}
+xdata <- read.csv("../../data_files/individual_files/file1.csv")
+```
+
+
+
+
+---
+
+
+## trouble shooting
+
+- if a chunk results in an error, by default the document won't compile
+
+.XC[
+````
+```{r}`r ''`
+mean(doesntexist)
+```
+````
+]
+
+
+- if you want successful compilation anyway, there is the chunk option `error = TRUE`
+
+.XC[
+````
+```{r, error = TRUE}`r ''`
+mean(doesntexist)
+```
+````
+]
+
+```{r, error = TRUE}
+mean(doesntexist)
+```
+

@@ -1,0 +1,16 @@
+
+## prep
+
+- create a new RStudio project
+
+- create a new `R` markdown file
+
+- memorize some keyboard shortcuts
+
+  - cmd/ctrl + shift + k: build document
+  
+  - cmd/ctrl + option/alt + i: new R chunk
+
+  - cmd/ctrl + shift + enter: run current chunk
+  
+  - cmd/ctrl + shift + 0: restart `R`

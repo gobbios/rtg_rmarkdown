@@ -1,0 +1,22 @@
+## a first code chunk
+
+.XC[
+````
+This is just some text about how to generate random numbers in R:
+
+```{r}`r ''`
+rnorm(3)
+```
+Easy, no?
+````
+]
+
+
+This is just some text about how to generate random numbers in R:
+
+```{r}
+rnorm(3)
+```
+
+Easy, no?
+

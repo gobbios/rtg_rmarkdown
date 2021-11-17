@@ -1,0 +1,99 @@
+## references and bibliography
+
+- (can't be demonstrated in this particular presentation format, bummer)
+
+- requires `bibtex` references
+
+- bibtex files are plain text files
+
+- probably any reference manager can import/export references in bib(la)tex style (Zotero, Mendeley, Endnote)
+
+- in my workflow, I manage my references with Zotero, and export regularly a .bib file with all the references I ever cited at some point, which I then use for citations in R markdown documents
+
+- check out the "Better Bib(La)TeX" plugin for Zotero (https://github.com/retorquere/zotero-better-bibtex)
+
+- a multi-platform graphic reference manager for bib(la)tex files is JabRef (http://www.jabref.org/)
+
+- style sheets for different journals (.csl files) can be found here: https://www.zotero.org/styles (or here: https://github.com/citation-style-language/styles)
+
+
+---
+
+## references and bibliography
+
+- a typical bibtex entry for a journal article and book chapter (on the next slide) looks like this
+
+- the crucial thing here is the citation key, i.e. the identifier (`forstmeier2011` in the first example)
+
+- you need the citation key to cross-reference
+
+.XC[
+````
+@article{forstmeier2011,
+  title = {Cryptic Multiple Hypotheses Testing in Linear Models: Overestimated Effect Sizes and the Winner's Curse},     
+  volume = {65},
+  doi = {10.1007/s00265-010-1038-5},
+  journaltitle = {Behavioral Ecology and Sociobiology},
+  date = {2011},
+  pages = {47--55},
+  author = {Forstmeier, Wolfgang and Schielzeth, Holger}
+}
+````
+]
+
+---
+
+## references and bibliography
+
+- here is an entry for a book chapter
+
+.XC[
+````
+@incollection{garamszegi2014,
+  location = {Berlin},
+  title = {Multimodel-Inference in Comparative Analyses},
+  booktitle = {Modern Phylogenetic Comparative Methods and Their Application in Evolutionary Biology}, 
+  publisher = {Springer},
+  date = {2014},
+  pages = {305--331},
+  author = {Garamszegi, László Zsolt and Mundry, Roger},
+  editor = {Garamszegi, László Zsolt}
+}
+````
+]
+
+---
+
+## references and bibliography
+
+- update the `yaml` header to point to .bib file (biblographic entries) and .csl file (formatting style)
+
+````md
+---
+title: "Untitled"
+author: "Christof Neumann"
+date: "9/29/2021"
+output: 
+  html_document:
+    highlight: tango
+editor_options: 
+  chunk_output_type: console
+bibliography: data_files/refs.bib
+csl: data_files/animal-behaviour.csl
+---
+````
+
+---
+
+## references and bibliography
+
+.XC[
+````
+Blah blah [@forstmeier2011; @garamszegi2014].
+
+Blah blah [see @forstmeier2011, p. 365; but see @garamszegi2014].
+
+@forstmeier2011 say something.
+
+````
+]

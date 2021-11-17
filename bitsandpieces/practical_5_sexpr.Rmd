@@ -1,0 +1,26 @@
+## using `R` objects in the actual text part
+
+.XC[
+````
+```{r, echo = FALSE}`r ''`
+data("cars")
+ncars <- nrow(cars)
+mycor <- cor(cars$speed, cars$dist)
+```
+
+The cars data set has `r knitr::inline_expr("ncars")` observations.
+And the correlation between speed and distance is `r knitr::inline_expr("round(mycor, 2)")`.
+
+````
+]
+
+
+```{r, echo = FALSE}
+data("cars")
+ncars <- nrow(cars)
+mycor <- cor(cars$speed, cars$dist)
+```
+
+
+The cars data set has `r ncars` observations. 
+And the correlation between speed and distance is `r round(mycor, 2)`.

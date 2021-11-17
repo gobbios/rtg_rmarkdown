@@ -1,0 +1,22 @@
+## tables
+
+- are a bit trickier
+
+- simple tables are possible with `knitr::kable()`
+
+- more complex tables require the package `xtable`
+
+.XC[
+````
+```{r, echo = FALSE}`r ''`
+data("airquality")
+knitr::kable(head(airquality))
+```
+
+````
+]
+
+```{r, echo = FALSE}
+data("airquality")
+knitr::kable(head(airquality))
+```

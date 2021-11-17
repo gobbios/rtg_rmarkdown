@@ -18,7 +18,7 @@
 
 - my assumptions:
   
-  - you have used R before and use RStudio 
+  - you have used `R` before and use RStudio 
   
   - you want to produce pdfs (article, thesis, presentation) or html (presentation, websites, `shiny`)
   
@@ -30,3 +30,4 @@
   
   - always keep in mind what you **need** (and not what you **can do**)
 
+  - fine line between what I would consider a 'good' presentation and showcasing the capabilities of `R` markdown

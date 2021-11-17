@@ -1,0 +1,68 @@
+## more on code chunks
+
+.XC[
+````
+```{r}`r ''`
+x <- rnorm(1000)
+hist(x)
+```
+````
+]
+
+
+```{r}
+x <- rnorm(1000)
+hist(x)
+```
+
+
+---
+
+## more on code chunks
+
+- use chunk options
+
+.XC[
+````
+```{r, out.width = "40%", fig.align = 'center'}`r ''`
+x <- rnorm(1000)
+hist(x)
+```
+````
+]
+
+
+```{r, out.width = "40%", fig.align = 'center'}
+x <- rnorm(1000)
+hist(x)
+```
+
+
+---
+
+## more on code chunks
+
+- hide the actual code, and add a caption (which is desired in many situations)
+.XC[
+````
+```{r, out.width = "40%", fig.align = 'center', echo = FALSE, 
+fig.cap = "This is the figure caption."}`r ''`
+x <- rnorm(1000)
+hist(x)
+```
+````
+]
+
+
+```{r, out.width = "40%", fig.align = 'center', echo = FALSE, fig.cap = "This is the figure caption."}
+x <- rnorm(1000)
+hist(x)
+```
+
+
+
+
+
+
+
+

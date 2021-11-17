@@ -63,4 +63,198 @@ fast_override <- TRUE
 
 ```
 
+---
+class: inverse, center, middle
+
+# dynamic documents
+
+---
+
+```{r, child="bitsandpieces/dynamic_documents.Rmd"}
+
+```
+
+
+---
+
+
+```{r, eval = FALSE, child="bitsandpieces/survey_results.Rmd"}
+
+```
+
+
+---
+
+```{r, child="bitsandpieces/background.Rmd"}
+
+```
+
+---
+class: inverse, center, middle
+# what is R markdown and why should we care?
+
+---
+
+```{r, child="bitsandpieces/rmarkdown_intro.Rmd"}
+
+```
+
+---
+class: center, middle
+# your most important collaborator is your future self!!! 
+
+---
+
+```{r, child="bitsandpieces/when_complicated.Rmd"}
+
+```
+
+
+
+
+---
+class: inverse, center, middle
+# the nitty and the gritty
+
+
+---
+
+```{r, child="bitsandpieces/rmarkdown_pieces.Rmd"}
+
+```
+
+
+
+
+---
+class: inverse, center, middle
+# getting to it
+
+
+---
+
+```{r, child="bitsandpieces/practical_0_prep.Rmd"}
+
+```
+
+---
+
+```{r, child="bitsandpieces/practical_1_yaml_header.Rmd"}
+
+```
+
+---
+
+```{r, child="bitsandpieces/practical_2_paragraph.Rmd"}
+
+```
+
+---
+
+```{r, child="bitsandpieces/practical_3_first_chunk.Rmd"}
+
+```
+
+---
+
+```{r, child="bitsandpieces/practical_4_more_chunks.Rmd"}
+
+```
+
+---
+
+```{r, eval=TRUE, child="bitsandpieces/practical_5_sexpr.Rmd"}
+
+```
+
+
+---
+
+```{r, eval=TRUE, child="bitsandpieces/practical_6_math.Rmd"}
+
+```
+
+---
+
+```{r, eval=TRUE, child="bitsandpieces/practical_7_tables.Rmd"}
+
+```
+
+---
+
+```{r, eval=TRUE, child="bitsandpieces/practical_8_refs.Rmd"}
+
+```
+
+
+
+
+---
+
+## going further
+
+- cross-references (to figures and tables)
+
+- table and plotting options
+
+- conditional inclusion of chunks
+
+- actually using $\LaTeX$
+
+- formatting (chapters)
+
+- extended referencing (bibliographic)
+
+- integrating other coding languages (Python, `stan`, `C++`, ...)
+
+- put it all under version control
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+class: inverse, center, middle
+
+# wrapping up
+
+
+---
+
+## wrapping up
+
+- establish good practice
+
+--
+
+- you can't reproduce what doesn't exist
+
+--
+
+- your single most important collaborator is your future self
+
+--
+
+- think about your workflow
+
+```{r vince, eval = TRUE, echo=FALSE, out.width="60%", fig.align='right'}
+suppressPackageStartupMessages(library(magick))
+vince <- image_read("decoration_files/vince.gif") 
+vince
+```
+
 
