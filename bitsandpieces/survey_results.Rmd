@@ -1,6 +1,9 @@
 ## a truly dynamic document
 
-- this example grabs the data directly from the survey website
+
+
+
+
 
 
 ```{r, echo=FALSE}
@@ -14,6 +17,14 @@ xremote <- Sys.getenv("USER") == "christofneumann" & !is.null(getOption("sm_oaut
 
 ```{r, echo=FALSE, eval = !xremote}
 xdata <- read.csv("../data_files/survey_results.csv")
+```
+
+```{r, results='asis', echo=FALSE, eval = !xremote}
+cat("- this example uses locally stored data (and may be not up to date)\n")
+```
+
+```{r, results='asis', echo=FALSE, eval = xremote}
+cat("- this example grabs the data directly from the survey website\n")
 ```
 
 
