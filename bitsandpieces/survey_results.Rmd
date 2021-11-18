@@ -41,12 +41,17 @@ xd$reproducible[xd$reproducible == "?"] <- NA
 
 xd$reproducible <- suppressWarnings(as.numeric(as.character(xd$reproducible)))
 xdata <- xd
+
+# write local table if needed
+# write.csv(xdata, file = "data_files/survey_results.csv", row.names = FALSE, quote = FALSE)
+
 ```
 
 
-```{r, echo=FALSE, fig.width=8, fig.height=5, out.width="80%", fig.retina=2, fig.align='center'}
-par(mfrow = c(1, 2), las = 1, family = "serif")
+```{r, echo=FALSE, fig.width=10, fig.height=5, out.width="90%", fig.retina=2, fig.align='center'}
+par(mfrow = c(1, 3), las = 1, family = "serif")
 barplot(table(xdata$formal_training), main = "did you receive formal training?", ylim = c(0, 20), xpd = TRUE)
 barplot(table(xdata$crisis), main = "is there a crisis?", ylim = c(0, 20), xpd = TRUE)
+barplot(table(xdata$tried), main = "did you try reproducing\nothers' results?", ylim = c(0, 20), xpd = TRUE)
 ```
 

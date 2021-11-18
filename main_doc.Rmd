@@ -189,25 +189,6 @@ class: inverse, center, middle
 
 
 
----
-
-## going further
-
-- cross-references (to figures and tables)
-
-- table and plotting options
-
-- conditional inclusion of chunks
-
-- actually using $\LaTeX$
-
-- formatting (chapters)
-
-- extended referencing (bibliographic)
-
-- integrating other coding languages (Python, `stan`, `C++`, ...)
-
-- put it all under version control
 
 
 
@@ -232,6 +213,43 @@ class: inverse, center, middle
 
 # wrapping up
 
+---
+
+## going further
+
+- cross-references (to figures and tables)
+
+--
+
+- more table and plotting options
+
+--
+
+- conditional inclusion of chunks
+
+--
+
+- actually using $\LaTeX$
+
+--
+
+- caching of code chunks
+
+--
+
+- document formatting/layouts (e.g. thesis chapters)
+
+--
+
+- extended referencing (bibliographic)
+
+--
+
+- integrating other coding languages (Python, `stan`, `C++`, ...)
+
+--
+
+- put it all under version control
 
 ---
 
@@ -245,11 +263,11 @@ class: inverse, center, middle
 
 --
 
-- your single most important collaborator is your future self
+- think about your workflow
 
 --
 
-- think about your workflow
+- your single most important collaborator is your future self
 
 ```{r vince, eval = TRUE, echo=FALSE, out.width="60%", fig.align='right'}
 suppressPackageStartupMessages(library(magick))

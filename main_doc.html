@@ -4,7 +4,7 @@
     <title>reworking your workflow</title>
     <meta charset="utf-8" />
     <meta name="author" content="Christof Neumann" />
-    <meta name="date" content="2021-11-17" />
+    <meta name="date" content="2021-11-18" />
     <script src="libs/header-attrs-2.11/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
@@ -17,7 +17,7 @@ class: center, middle, inverse, title-slide
 ## combining data analysis and reporting with dynamic documents
 ### Christof Neumann
 ### RTG Understanding Social Relationships
-### 2021-11-17
+### 2021-11-18
 
 ---
 
@@ -138,7 +138,7 @@ revision and updates
 
 
 
-&lt;img src="main_doc_files/figure-html/unnamed-chunk-22-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="main_doc_files/figure-html/unnamed-chunk-22-1.png" width="90%" style="display: block; margin: auto;" /&gt;
 
 
 
@@ -580,7 +580,7 @@ rnorm(3)
 ```
 
 ```
-## [1]  2.1312383  0.3279375 -1.6218263
+## [1] -0.61901958 -0.05424848 -0.04937414
 ```
 
 Easy, no?
@@ -703,17 +703,23 @@ And the correlation between speed and distance is 0.81.
 We can also write fancy equations like $x = \sqrt{y} + c^2$, if they 
 are wrapped in dollar signs ($). But equations can also span 
 multiple lines, with a 'proper' math environment:
+
 $$
 x = \sum{\frac{42 + y}{log(z)}}
 $$
+
+Fancy, isn't it?
 
 ````
 ]
 
 We can also write fancy equations like `\(x = \sqrt{y} + c^2\)`, if they are wrapped in dollar signs ($). But equations can also span multiple lines, with a 'proper' math environment:
+
 $$
 x = \sum{\frac{42 + y}{log(z)}}
 $$
+
+Fancy, isn't it?
 
 ---
 
@@ -859,25 +865,6 @@ Blah blah [see @forstmeier2011, p. 365; but see @garamszegi2014].
 
 
 
----
-
-## going further
-
-- cross-references (to figures and tables)
-
-- table and plotting options
-
-- conditional inclusion of chunks
-
-- actually using `\(\LaTeX\)`
-
-- formatting (chapters)
-
-- extended referencing (bibliographic)
-
-- integrating other coding languages (Python, `stan`, `C++`, ...)
-
-- put it all under version control
 
 
 
@@ -902,6 +889,43 @@ class: inverse, center, middle
 
 # wrapping up
 
+---
+
+## going further
+
+- cross-references (to figures and tables)
+
+--
+
+- more table and plotting options
+
+--
+
+- conditional inclusion of chunks
+
+--
+
+- actually using `\(\LaTeX\)`
+
+--
+
+- caching of code chunks
+
+--
+
+- document formatting/layouts (e.g. thesis chapters)
+
+--
+
+- extended referencing (bibliographic)
+
+--
+
+- integrating other coding languages (Python, `stan`, `C++`, ...)
+
+--
+
+- put it all under version control
 
 ---
 
@@ -915,11 +939,11 @@ class: inverse, center, middle
 
 --
 
-- your single most important collaborator is your future self
+- think about your workflow
 
 --
 
-- think about your workflow
+- your single most important collaborator is your future self
 
 &lt;img src="main_doc_files/figure-html/vince-1.gif" width="60%" style="display: block; margin: auto 0 auto auto;" /&gt;
 
